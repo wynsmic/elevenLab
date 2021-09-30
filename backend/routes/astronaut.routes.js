@@ -5,25 +5,26 @@ import { ensureAuthenticated } from "../utils/authMiddleware.js";
 export const astronautRoutes = (app) => {
   const router = Router();
 
-  router.post("/", ensureAuthenticated, astronautCtrl.create);
-  router.get("/:ticket_id", astronautCtrl.findAll);
-  router.put("/:id", ensureAuthenticated, astronautCtrl.update);
-  router.delete("/:id", ensureAuthenticated, astronautCtrl.delete);
+  router.post("/", /*ensureAuthenticated,*/ astronautCtrl.create);
+  router.get("/", astronautCtrl.findAll);
+  router.get("/:id", astronautCtrl.findOne);
+  router.put("/:id", astronautCtrl.update);
+  router.delete("/:id", astronautCtrl.delete);
 
   /**
    * @swagger
-   * /api/astronaut/{ticketId}:
+   * /api/astronaut/{astronautId}:
    *  get:
    *    tags:
    *      - astronaut
-   *    description: Use to request all astronaut for a given ticketId
+   *    description: Use to request all astronaut for a given astronautId
    *    parameters:
    *      - in: path
-   *        name: ticketId
+   *        name: astronautId
    *        schema:
    *          type: integer
    *        required: true
-   *        description: Numeric ID of the ticket for which the astronaut are retrieved
+   *        description: Numeric ID of the astronaut for which the astronaut are retrieved
    *    responses:
    *      '200':
    *        description: Success
@@ -42,10 +43,10 @@ export const astronautRoutes = (app) => {
    *        schema:
    *          type: object
    *          required:
-   *            - ticket_id
+   *            - astronaut_id
    *            - description
    *          properties:
-   *              ticket_id:
+   *              astronaut_id:
    *                type: integer
    *              description:
    *                type: string

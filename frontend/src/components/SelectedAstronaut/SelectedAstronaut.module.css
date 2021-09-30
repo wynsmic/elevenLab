@@ -1,0 +1,38 @@
+.oneAstronaut{
+    display: flex;
+    padding: 20px;
+    border: solid 1px  rgb(240, 240, 240);
+    margin: 5px;
+    height: fit-content;
+}
+
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: smaller;
+    margin-left: 20px;
+    width: 200px;
+}
+.smallPicture{
+    height: 100px;
+}
+
+.description{
+    text-align: left;
+}
+
+.astronaut{
+    width: 90%;
+    margin: 5px;
+    border: solid 1px lightgray;
+}
+.astronaut th{
+    font-weight: normal;
+    font-size: smaller;
+}
+.updatePannel{
+    display: flex;
+    flex-direction: column;
+}

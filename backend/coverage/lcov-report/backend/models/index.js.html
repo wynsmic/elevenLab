@@ -88,7 +88,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {config} from "../config/sequilize.js";
 import Sequelize from "sequelize";
 import {user} from './user.js'
-import {ticket} from './ticket.js'
+import {astronaut} from './astronaut.js'
 import {comment} from './comment.js'
 const sequelize = new Sequelize(...config);
 &nbsp;
@@ -96,7 +96,7 @@ export const db = {
     Sequelize : Sequelize,
     sequelize : sequelize,
     user : user(sequelize, Sequelize),
-    ticket : ticket(sequelize, Sequelize),
+    astronaut : astronaut(sequelize, Sequelize),
     comment : comment(sequelize, Sequelize)
 };
 &nbsp;</pre></td></tr></table></pre>

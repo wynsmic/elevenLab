@@ -296,7 +296,7 @@ controller.create = (req, res) =&gt; {
 &nbsp;
    // Validate request
    let stop=false;
-   ["ticket_id", "description"].forEach((element) =&gt; {
+   ["astronaut_id", "description"].forEach((element) =&gt; {
      if (!req.body[element]) {
        response.badRequest(`Please provide a ${element}`);
        strop =true;
@@ -307,7 +307,7 @@ controller.create = (req, res) =&gt; {
   // Create a comment
   const comment = {
     user_id: req.user_id, // rely on user credential instead of not req.boby
-    ticket_id: req.body.ticket_id,
+    astronaut_id: req.body.astronaut_id,
     description: req.body.description,
   };
 &nbsp;
@@ -328,7 +328,7 @@ controller.findAll = (req, res) =&gt; {
   model
     .findAll({
       where: {
-        ticket_id: parseInt(req.params.ticket_id),
+        astronaut_id: parseInt(req.params.astronaut_id),
       },
     })
     .then((data) =&gt; {
@@ -336,8 +336,8 @@ controller.findAll = (req, res) =&gt; {
     })
     .catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
 <span class="cstat-no" title="statement not covered" >      new responseHelper(res).internalError(</span>
-        "Server has failed retrieving astronaut for ticket id " +
-          req.params.ticket_id
+        "Server has failed retrieving astronaut for astronaut id " +
+          req.params.astronaut_id
       );
 <span class="cstat-no" title="statement not covered" >      console.error(err);</span>
     });

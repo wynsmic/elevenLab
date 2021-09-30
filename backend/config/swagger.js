@@ -2,10 +2,10 @@
  const swaggerOptions ={
   swaggerDefinition: {
       info: {
-          title: "MY API TITLE",
+          title: "ASTRONAUT API",
           description: "API Documentation",
           contact: {
-              name: "Cali"
+              name: "wynsmic"
           },
           servers: ["http://localhost:4000"]
       }

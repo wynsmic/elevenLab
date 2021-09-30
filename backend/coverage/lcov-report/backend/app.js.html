@@ -225,7 +225,7 @@ app.use(cookieParser());
 const swaggerOptions ={
   swaggerDefinition: {
       info: {
-          title: "Ticket To Ride",
+          title: "ElevenLab Test",
           description: "Documentation for the REST API ",
           servers: ["http://localhost:4000"]
       }
@@ -241,12 +241,12 @@ app.use(checkJWT)
 &nbsp;
 // 6. Routes to include
 import {usersRoutes} from "./routes/users.routes.js";
-import {ticketsRoutes} from "./routes/tickets.routes.js";
+import {astronautRoutes} from "./routes/astronaut.routes.js";
 import {astronautRoutes} from "./routes/astronaut.routes.js";
 import {sessionRoutes} from "./routes/session.routes.js"
 &nbsp;
 usersRoutes(app)
-ticketsRoutes(app)
+astronautRoutes(app)
 astronautRoutes(app)
 sessionRoutes(app)
 &nbsp;

@@ -1,22 +1,27 @@
-.ticketList{
+.astronautList{
     width: 60vw;
     padding: 20px;
     box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
-.newTicketButton{
+.item:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.newAstronautButton{
     border: solid 2px darkblue;
     background-color: rgb(219, 237, 248);
     border-radius: 1000px;
     margin: 20px;
     font-size: x-large;
 }
-.newTicketButton:hover{
+.newAstronautButton:hover{
     cursor: pointer;
     background-color: lightskyblue;
 }
 
-.newTicketForm{
+.NewAstronautForm{
     position:absolute;
     margin: auto;
     padding: 50px;
@@ -29,7 +34,7 @@
     justify-content:center;
     align-content: center;
 }
-.newTicketForm input{
+.NewAstronautForm input{
     margin: 20px;
 }
 

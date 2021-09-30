@@ -1,4 +1,4 @@
-# Ticket to Ride
+# ElevenLab Test
 
 ## Description
 
@@ -25,11 +25,11 @@ with body:
 }
 
 -then with header: Authorization = Bearer ww@gmail.com
-http://localhost:4000/api/tickets/
+http://localhost:4000/api/astronaut/
 
 with body :
 {
-"tittle": "Best quality ever",
+"name": "Best quality ever",
 "description": "To test again and again",
 }
 
@@ -38,7 +38,7 @@ http://localhost:4000/api/astronaut/
 
 with body:
 {
-     "ticket_id": "2",
+     "astronaut_id": "2",
     "description": "test",
 }
 

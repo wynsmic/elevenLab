@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for backend/routes/tickets.routes.js</title>
+    <title>Code coverage report for backend/routes/astronaut.routes.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">backend/routes</a> tickets.routes.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">backend/routes</a> astronaut.routes.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -311,26 +311,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import ticketsCtrl from "../controllers/tickets.controller.js";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import astronautCtrl from "../controllers/astronaut.controller.js";
 import { Router } from "express";
 import { ensureAuthenticated } from "../utils/authMiddleware.js";
 &nbsp;
-export const ticketsRoutes = (app) =&gt; {
+export const astronautRoutes = (app) =&gt; {
   const router = Router();
 &nbsp;
-  router.post("/", ensureAuthenticated, ticketsCtrl.create);
-  router.get("/", ticketsCtrl.findAll);
-  router.get("/:id", ticketsCtrl.findOne);
-  router.put("/:id", ensureAuthenticated, ticketsCtrl.update);
-  router.delete("/:id", ensureAuthenticated, ticketsCtrl.delete);
+  router.post("/", ensureAuthenticated, astronautCtrl.create);
+  router.get("/", astronautCtrl.findAll);
+  router.get("/:id", astronautCtrl.findOne);
+  router.put("/:id", ensureAuthenticated, astronautCtrl.update);
+  router.delete("/:id", ensureAuthenticated, astronautCtrl.delete);
 &nbsp;
   /**
    * @swagger
-   * /api/tickets:
+   * /api/astronaut:
    *  get:
    *    tags:
-   *      - tickets
-   *    description: Use to request all tickets
+   *      - astronaut
+   *    description: Use to request all astronaut
    *    responses:
    *      '200':
    *        description: Success
@@ -340,19 +340,19 @@ export const ticketsRoutes = (app) =&gt; {
    *
    *  post:
    *    tags:
-   *      - tickets
-   *    description: Use to create a ticket
+   *      - astronaut
+   *    description: Use to create a astronaut
    *    parameters:
    *      - in: body
-   *        name: ticket
-   *        description: The ticket to create.
+   *        name: astronaut
+   *        description: The astronaut to create.
    *        schema:
    *          type: object
    *          required:
-   *            - tittle
+   *            - name
    *            - description
    *          properties:
-   *              tittle:
+   *              name:
    *                type: string
    *              description:
    *                type: string
@@ -369,25 +369,25 @@ export const ticketsRoutes = (app) =&gt; {
    *      '500':
    *         description: Internal server error
    *
-   * /api/tickets/{ticketId}:
+   * /api/astronaut/{astronautId}:
    *  put:
    *    tags:
-   *      - tickets
-   *    description: Use to update a ticket by ID
+   *      - astronaut
+   *    description: Use to update a astronaut by ID
    *    parameters:
    *      - in: path
-   *        name: ticketID
+   *        name: astronautID
    *        schema:
    *          type: integer
    *        required: true
-   *        description: Numeric ID of the ticket to update
+   *        description: Numeric ID of the astronaut to update
    *      - in: body
-   *        name: ticket
+   *        name: astronaut
    *        description: The data to update.
    *        schema:
    *          type: object
    *          properties:
-   *              tittle:
+   *              name:
    *                type: string
    *              description:
    *                type: string
@@ -412,15 +412,15 @@ export const ticketsRoutes = (app) =&gt; {
    * 
   *  delete:
    *    tags:
-   *      - tickets
-   *    description: Use to delete a ticket by ID
+   *      - astronaut
+   *    description: Use to delete a astronaut by ID
    *    parameters:
    *      - in: path
-   *        name: ticketID
+   *        name: astronautID
    *        schema:
    *          type: integer
    *        required: true
-   *        description: Numeric ID of the ticket to delete
+   *        description: Numeric ID of the astronaut to delete
 &nbsp;
    *    responses:
    *      '200':
@@ -436,7 +436,7 @@ export const ticketsRoutes = (app) =&gt; {
    *         description: Internal server error   *
    */
 &nbsp;
-  app.use("/api/tickets", router);
+  app.use("/api/astronaut", router);
 };
 &nbsp;</pre></td></tr></table></pre>
 

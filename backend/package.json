@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "API end points to serve ticket-to-ride",
+  "description": "API end points to serve elevenlab",
   "main": "index.js",
   "type": "module",
   "scripts": {

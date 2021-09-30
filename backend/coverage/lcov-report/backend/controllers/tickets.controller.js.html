@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for backend/controllers/tickets.controller.js</title>
+    <title>Code coverage report for backend/controllers/astronaut.controller.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">backend/controllers</a> tickets.controller.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">backend/controllers</a> astronaut.controller.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -313,14 +313,14 @@
 import { responseHelper } from "../utils/responseHelper.js";
 &nbsp;
 const controller = {};
-const model = db.ticket;
+const model = db.astronaut;
 &nbsp;
 controller.create = (req, res) =&gt; {
   const response = new responseHelper(res);
 &nbsp;
   // Validate request
   let stop=false;
-  ["tittle", "description", "status"].forEach((element) =&gt; {
+  ["name", "description", "status"].forEach((element) =&gt; {
     if (!req.body[element]) {
       response.badRequest(`Please provide a ${element}`);
       strop =true;
@@ -328,23 +328,23 @@ controller.create = (req, res) =&gt; {
   });
   <span class="missing-if-branch" title="if path not taken" >I</span>if (stop) <span class="cstat-no" title="statement not covered" >return;</span>
 &nbsp;
-  // Create a ticket
-  const ticket = {
+  // Create a astronaut
+  const astronaut = {
     user_id: req.user_id, // rely on user credential instead of not req.boby
-    tittle: req.body.tittle,
+    name: req.body.name,
     description: req.body.description,
     status: req.body.status,
   };
 &nbsp;
-  // Save ticket in the database
+  // Save astronaut in the database
   model
-    .create(ticket)
+    .create(astronaut)
     .then((data) =&gt; {
       res.send(data);
     })
     .catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
 <span class="cstat-no" title="statement not covered" >      response.internalError(</span>
-        err.message || "Some error occurred while creating the ticket."
+        err.message || "Some error occurred while creating the astronaut."
       );
     });
 };
@@ -373,14 +373,14 @@ controller.findOne = <span class="fstat-no" title="function not covered" >(r</sp
     })
     .catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
 <span class="cstat-no" title="statement not covered" >      res.status(500).send({</span>
-        message: "Error retrieving ticket with id=" + id,
+        message: "Error retrieving astronaut with id=" + id,
       });
 <span class="cstat-no" title="statement not covered" >      console.error(err);</span>
     });
 };
 &nbsp;
 controller.update = (req, res) =&gt; {
-  const ticketId = req.params.id;
+  const astronautId = req.params.id;
   const user_id = req.user_id;
   const response = new responseHelper(res);
 &nbsp;
@@ -397,40 +397,40 @@ controller.update = (req, res) =&gt; {
 &nbsp;
   model
     .update(req.body, {
-      where: { id: ticketId, user_id: user_id },
+      where: { id: astronautId, user_id: user_id },
     })
     .then((num) =&gt; {
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (num == 1) res.send({ message: "Ticket was updated successfully." });
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (num == 1) res.send({ message: "Astronaut was updated successfully." });
       else
 <span class="cstat-no" title="statement not covered" >        response.badRequest(</span>
-          `No ticket found with id=${ticketId} written by user id=${user_id}.`
+          `No astronaut found with id=${astronautId} written by user id=${user_id}.`
         );
     })
     .catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
-<span class="cstat-no" title="statement not covered" >      response.internalError("Error updating Ticket with id=" + ticketId);</span>
+<span class="cstat-no" title="statement not covered" >      response.internalError("Error updating Astronaut with id=" + astronautId);</span>
 <span class="cstat-no" title="statement not covered" >      console.log(err);</span>
     });
 };
 &nbsp;
 controller.delete = (req, res) =&gt; {
-  const ticketId = req.params.id;
+  const astronautId = req.params.id;
   const user_id = req.user_id;
   const response = new responseHelper(res);
 &nbsp;
   model
     .destroy({
-      where: { id: ticketId, user_id: user_id },
+      where: { id: astronautId, user_id: user_id },
     })
     .then((num) =&gt; {
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (num == 1) res.send({ message: "Ticket was deleted successfully!" });
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (num == 1) res.send({ message: "Astronaut was deleted successfully!" });
       else
 <span class="cstat-no" title="statement not covered" >        response.badRequest(</span>
-          `No ticket found with id=${ticketId} written by user id=${user_id}.`
+          `No astronaut found with id=${astronautId} written by user id=${user_id}.`
         );
     })
     .catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
 <span class="cstat-no" title="statement not covered" >      console.log(err);</span>
-<span class="cstat-no" title="statement not covered" >      response.internalError("Error deleting Ticket with id=" + user_id);</span>
+<span class="cstat-no" title="statement not covered" >      response.internalError("Error deleting Astronaut with id=" + user_id);</span>
     });
 };
 &nbsp;

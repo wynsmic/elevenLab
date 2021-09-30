@@ -1,12 +1,12 @@
-export const comment = (sequelize, Sequelize) => {
+export const astronaut = (sequelize, Sequelize) => {
     return sequelize.define("astronaut", {
-      ticket_id: {
+      name: {
+        type: Sequelize.STRING
+      },
+      age: {
         type: Sequelize.INTEGER
       },
-      user_id: {
-        type: Sequelize.INTEGER
-      },
-      description: {
+      picture_url: {
         type: Sequelize.STRING
       }
     });
