@@ -1,0 +1,45 @@
+.ticketList{
+    width: 60vw;
+    padding: 20px;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+}
+
+.newTicketButton{
+    border: solid 2px darkblue;
+    background-color: rgb(219, 237, 248);
+    border-radius: 1000px;
+    margin: 20px;
+    font-size: x-large;
+}
+.newTicketButton:hover{
+    cursor: pointer;
+    background-color: lightskyblue;
+}
+
+.newTicketForm{
+    position:absolute;
+    margin: auto;
+    padding: 50px;
+    height: 100px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 4px 6px 0 #171717;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-content: center;
+}
+.newTicketForm input{
+    margin: 20px;
+}
+
+.cancelButton{
+    position: absolute;
+    bottom: 10px;
+    left:20px;
+}
+.sendButton{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}

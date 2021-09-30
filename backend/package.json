@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "API end points to serve ticket-to-ride",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev_server": "nodemon ./server.js",
+    "test-backend": "set NODE_OPTIONS=--experimental-vm-modules set NODE_ENV=TEST && jest --config ./config/jest.cjs  --coverage --runInBand --detectOpenHandles"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "jest": "^27.2.0",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.6",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
